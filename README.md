@@ -24,7 +24,7 @@ $ - Enter Scripts Here
 
 Links to the above packages and dependencies can be found here:
 
-- List pakcages here
+- List packages here
 
 **Run the following postgres commands to setup database**
 
@@ -63,4 +63,4 @@ In your webrowser, navigate to *localhost:8000* to access the home page.
 
 
 **Testing**
-COMING SOOn
+COMING SOON
