@@ -1,9 +1,15 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 
 <html lang="en">
     <head>
         <title>Contact Us</title>
         <meta charset=utf-8 />
+
+        <link   rel="stylesheet" 
+                href="{% static "bootstrap/dist/css/bootstrap.min.css" %}" />
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
 
         <style>
             html,body {
@@ -17,7 +23,7 @@
 
     <body>
         {% include "navbar.html" %}
-        
+
         <!-- SCRIPTS GO HERE -->
 
 

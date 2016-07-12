@@ -15,9 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+import trackingApp.views
 
 urlpatterns = [
-	url(r'^$', include('trackingApp.urls')),
-	url(r'^home/', 'trackingApp.views.index'),
     url(r'^admin/', admin.site.urls),
+    url(r'^$', trackingApp.views.home, name="home"),
+	url(r'^home/', trackingApp.views.home),
+    url(r'^help/', trackingApp.views.help),
+    url(r'^about_us/', trackingApp.views.about_us),
+    url(r'^contact_us/', trackingApp.views.contact_us),
+    url(r'^purchase/', trackingApp.views.purchase),
+    url(r'^login/$', trackingApp.views.login, {'template_name': 'login.html'}),
+    url(r'^logout/', trackingApp.views.logout, {'next_page': '/home'}),
+    url(r'^profile/', trackingApp.views.profile),
+    url(r'^notifications/', trackingApp.views.notifications),
+    url(r'^account_settings/', trackingApp.views.account_settings),
+    url(r'^sign_up/', trackingApp.views.sign_up),
 ]

@@ -5,5 +5,5 @@ from . import views
 app_name = 'trackingApp'
 urlpatterns = [
 	# ex: /trackingApp/
-    url(r'^$', views.index, name='index'),
+    url(r'', views.index, name='index'),
 ]
