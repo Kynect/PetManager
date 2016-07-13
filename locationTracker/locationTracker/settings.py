@@ -28,7 +28,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -69,6 +68,9 @@ TEMPLATES = [
         },
     },
 ]
+
+    
+LOGIN_REDIRECT_URL = '/' # It means home view
 
 WSGI_APPLICATION = 'locationTracker.wsgi.application'
 

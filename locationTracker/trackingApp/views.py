@@ -32,15 +32,6 @@ def contact_us(request):
 def purchase(request):
 	return render(request, 'purchase.html')
 
-def login(request):
-	return render(request, 'login.html')
-
-# def logout(request):
-# 	logout(request)
-
-# 	return redirect('/home')
-
-
 def profile(request):
 	if not request.user.is_authenticated():
 		return redirect('/home')
