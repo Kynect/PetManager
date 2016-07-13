@@ -23,8 +23,8 @@ def help(request):
 def testimonials(request):
 	return render(request, 'testimonials.html')
 
-def about_us(request):
-	return render(request, 'about_us.html')
+def team(request):
+	return render(request, 'team.html')
 
 def contact_us(request):
 	return render(request, 'contact_us.html')
