@@ -2,19 +2,19 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/home/"><span class="glyphicon glyphicon-home"></span>&nbsp&nbspeko</a>
+            <a class="navbar-brand" href="/home/" style="color:#000000;"><span class="glyphicon glyphicon-home"></span>&nbsp&nbspeko</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/purchase"><b>BUY NOW</b></span></a></li>
-                <li><a href="/testimonials">TESTIMONIALS</a></li>
-                <li><a href="/team">OUR TEAM</span></a></li>
-                <li><a href="/help">HELP</span></a></li>
+                <li class="navLinks"><a href="/purchase"><b>BUY NOW</b></span></a></li>
+                <li class="navLinks"><a href="/testimonials">TESTIMONIALS</a></li>
+                <li class="navLinks"><a href="/team">OUR TEAM</span></a></li>
+                <li class="navLinks"><a href="/help">HELP</span></a></li>
 
                 {% if user.is_authenticated %}
-                    <li class="dropdown">
+                    <li class="dropdown navLinks">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-menu-hamburger"></span>&nbsp&nbspACCOUNT</a>
 
                         <ul id="dropdownList" class="dropdown-menu">
