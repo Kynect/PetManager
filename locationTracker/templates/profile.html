@@ -18,11 +18,297 @@
                 width:100%;
                 height:100%;
             }
+
+            /* NAVBAR BEGIN */
+
+            #navbar {
+                border-width:0;
+            }
+
+            .navLinks:hover {
+                background-color:#dddddd;
+            }
+
+            /* NAVBAR END */
+
+            /* FOOTER BEGIN */
+
+            #footer { 
+                background-color:#252525; 
+                color:white;
+                width:100%; 
+                height:150px; 
+
+                -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+                box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
+            }
+
+            #footerDivLeft {
+                display:block;
+                width:33%;
+                height:100%;
+                float:left;
+            }
+
+            #footerDivLeft div {
+                display:block;
+                height:100%;
+                width:100%;
+                padding-left:40%;
+                padding-top:35px;
+            }
+
+            #footerDivRight {
+                display:block;
+                width:33%;
+                height:100%;
+                float:right;
+            }
+
+            #footerDivRight div {
+                display:block;
+                height:100px;
+                width:100px;
+                float:right;
+                margin-top:25px;
+                margin-right:40%;
+                vertical-align:middle;
+                border-style:solid;
+                border-width:0px;
+                border-right-width:1px;
+            }
+
+            #footerDivRight div span {
+                display:block;
+                width:100%;
+                text-align:left;
+            }
+
+            #footerDivRight div a {
+                color:#ffffff;
+            }
+
+            #footerDivRight div a:hover {
+                text-decoration:underline;
+            }
+
+            #footerDivMiddle {
+                display:block;
+                width:33%;
+                height:100%;
+                padding-top:48px;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+            }
+
+            /* FOOTER END */
+
+            #mainContainerProfile {
+                position:absolute;
+                top:50px;
+                bottom:0;
+                left:0;
+                right:0;
+                overflow-y:auto;
+            }
+
+            #profileContainer {
+                background-color:#ffffff;
+                display:block;
+                height:100%;
+                min-height:100%;
+                width:80%;
+                padding-top:20px;
+                margin-left:10%;
+                margin-right:10%;
+            }
+
+            #headerProfile {
+                display:block;
+                width:100%;
+            }
+
+            #headerProfile #headerTextProfile {
+                display:block;
+                width:auto;
+                float:left;
+                font-size:36px;
+            }
+
+            #notificationsContainer {
+                display:block;
+                width:70%;
+                height:60px;
+                float:right;
+            }
+
+            #notificationIcon {
+                position: relative;
+                display: block;
+                height:36px;
+                width:36px;
+                margin-top:20px;
+                background: url('/static/media/site_images/message_icon_1.png') no-repeat;
+                background-size: contain;
+                text-decoration: none;
+                float:right;
+            }
+
+            #notificationsNum {
+                background-color:red;
+                position: absolute;
+                padding-left:5px;
+                padding-right:5px;
+                right: -10px;
+                top:-10px;
+                color: #fff;
+                border-radius:5px;
+            }
+
+            #iconRowTop {
+                display:block;
+                width:100%;
+                height:350px;
+                margin-top:20px;
+            }
+
+            #iconRowBottom {
+                display:block;
+                width:100%;
+                height:350px;
+                margin-top:70px;
+            }
+
+            #profileContainer div .iconContainerLeft {
+                display:block;
+                width:30%;
+                height:100%;
+                float:left;
+                text-align:center;
+                padding-top:50px;
+            }
+
+            #profileContainer div .iconContainerRight {
+                display:block;
+                width:30%;
+                height:100%;
+                float:right;
+                text-align:center;
+                padding-top:50px;
+            }
+
+            #profileContainer div .iconContainerMiddle {
+                display:block;
+                width:30%;
+                height:100%;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center;
+                padding-top:50px;
+            }
+
+            .iconContainerLeft img {
+                width:230px; 
+                height:230px; 
+                margin-top:10px;
+            }
+
+            .iconContainerRight img {
+                width:230px; 
+                height:230px; 
+                margin-top:10px;
+            }
+
+            .iconContainerMiddle img {
+                width:230px; 
+                height:230px; 
+                margin-top:10px;
+            }
+
+            .iconContainerLeft span {
+                display:block; 
+                margin-top:20px;
+                text-align:center;
+                font-size:30px;
+            }
+
+            .iconContainerRight span {
+                display:block; 
+                margin-top:20px;
+                text-align:center;
+                font-size:30px;
+            }
+
+            .iconContainerMiddle span {
+                display:block; 
+                margin-top:20px;
+                text-align:center;
+                font-size:30px;
+            }
         </style>
     </head>
 
     <body>
         {% include "navbar.html" %}
+
+        <div id="mainContainerProfile">
+            <div id="profileContainer">
+                <div id="headerProfile">
+                    <span id="headerTextProfile">My Portal</span>
+
+                    <!-- Check number of Notifications here -->
+                    <a href="/notifications/" id="notificationIcon">
+                        <span id="notificationsNum">1</span>
+                    </a>
+
+                    <hr style="border:0; height:1px; width:100%; background-color:#444444; margin:0;">
+                </div>
+
+                <div id="iconRowTop">
+                    <div class="iconContainerLeft">
+                        <a href="#"><img src="/static/media/site_images/locate_icon_5.png"></a>
+                        <br />
+                        <span>Locate Device</span>
+                    </div>
+
+                    <div class="iconContainerRight">
+                        <a href="#"><img src="/static/media/site_images/pet_icon_2.png"></a>
+                        <br />
+                        <span>Pet Info</span>
+                    </div>
+
+                    <div class="iconContainerMiddle">
+                        <a href="#"><img src="/static/media/site_images/data_icon_6.png"></a>
+                        <br />
+                        <span>Data Analysis</span>
+                    </div>
+                </div>
+
+                <div id="iconRowBottom">
+                    <div class="iconContainerLeft">
+                        <a href="#"><img src="/static/media/site_images/history_icon_1.png"></a>
+                        <br />
+                        <span>History Log</span>
+                    </div>
+
+                    <div class="iconContainerRight">
+                        <a href="#"><img src="/static/media/site_images/account_icon_4.png"></a>
+                        <br />
+                        <span>Account Settings</span>
+                    </div>
+
+                    <div class="iconContainerMiddle">
+                        <a href="#"><img src="/static/media/site_images/device_icon_1.png"></a>
+                        <br />
+                        <span>Device Management</span>
+                    </div>
+                </div>
+            </div>
+
+            {% include "footer.html" %}
+        </div>
         
         <!-- SCRIPTS GO HERE -->
 
