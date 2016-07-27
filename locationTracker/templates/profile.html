@@ -36,9 +36,12 @@
             #footer { 
                 background-color:#252525; 
                 color:white;
-                width:100%; 
-                height:150px; 
-                clear:both;
+                width:100%;
+                padding-top:40px;
+                padding-bottom:40px;
+                position:absolute;
+                top:100%;
+                overflow:hidden;
 
                 -webkit-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
                 -moz-box-shadow: inset 0px 0px 14px 3px rgba(0,0,0,0.75);
@@ -48,33 +51,32 @@
             #footerDivLeft {
                 display:block;
                 width:33%;
-                height:100%;
                 float:left;
             }
 
             #footerDivLeft div {
                 display:block;
-                height:100%;
+                width:60%;
+                margin-left:40%;
+            }
+
+            #footerDivLeft div span {
+                display:block;
                 width:100%;
-                padding-left:40%;
-                padding-top:35px;
             }
 
             #footerDivRight {
                 display:block;
                 width:33%;
-                height:100%;
                 float:right;
+                font-size:14px;
             }
 
             #footerDivRight div {
                 display:block;
-                height:100px;
                 width:100px;
                 float:right;
-                margin-top:25px;
                 margin-right:40%;
-                vertical-align:middle;
                 border-style:solid;
                 border-width:0px;
                 border-right-width:1px;
@@ -96,17 +98,17 @@
 
             #footerDivMiddle {
                 display:block;
-                width:33%;
-                height:100%;
-                padding-top:48px;
+                width:34%;
                 margin-left:auto;
                 margin-right:auto;
                 text-align:center;
+                font-size:14px;
             }
 
             /* FOOTER END */
 
             #mainContainerProfile {
+                background-color:#ffffff;
                 position:absolute;
                 top:50px;
                 bottom:0;
@@ -115,20 +117,12 @@
                 overflow-y:auto;
             }
 
-            #profileContainer {
-                background-color:#ffffff;
-                display:block;
-                height:100%;
-                min-height:100%;
-                width:100%;
-                padding-top:20px;
-                padding-left:5%;
-                padding-right:5%;
-            }
-
             #headerProfile {
                 display:block;
-                width:100%;
+                width:90%;
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:20px;
             }
 
             #headerProfile #headerTextProfile {
@@ -168,64 +162,66 @@
                 border-radius:5px;
             }
 
-            #iconRowTop {
+            #iconRowContainer {
                 display:block;
+                width:90%;
+                position:absolute;
+                top:77px;
+                bottom:0px;
+                clear:both;
+                margin-left:5%;
+                margin-right:5%;
+            }
+
+            #iconRowTop {
+                display:flex;
                 width:100%;
-                height:350px;
-                margin-top:20px;
+                height:50%;
+                align-items:center;
             }
 
             #iconRowBottom {
-                display:block;
+                display:flex;
                 width:100%;
-                height:350px;
-                margin-top:70px;
+                height:50%;
+                align-items:center;
             }
 
-            #profileContainer div .iconContainerLeft {
+            #mainContainerProfile div .iconContainerLeft {
                 display:block;
-                width:30%;
-                height:100%;
+                width:33%;
                 float:left;
                 text-align:center;
-                padding-top:50px;
             }
 
-            #profileContainer div .iconContainerRight {
+            #mainContainerProfile div .iconContainerRight {
                 display:block;
-                width:30%;
-                height:100%;
+                width:33%;
                 float:right;
                 text-align:center;
-                padding-top:50px;
             }
 
-            #profileContainer div .iconContainerMiddle {
+            #mainContainerProfile div .iconContainerMiddle {
                 display:block;
-                width:30%;
-                height:100%;
+                width:34%;
                 margin-left:auto;
                 margin-right:auto;
                 text-align:center;
-                padding-top:50px;
             }
 
             .iconContainerLeft img {
                 width:230px; 
-                height:230px; 
-                margin-top:10px;
+                height:auto; 
             }
 
             .iconContainerRight img {
                 width:230px; 
-                height:230px; 
-                margin-top:10px;
+                height:auto; 
             }
 
             .iconContainerMiddle img {
                 width:230px; 
-                height:230px; 
-                margin-top:10px;
+                height:auto; 
             }
 
             .iconContainerLeft span {
@@ -255,18 +251,18 @@
         {% include "navbar.html" %}
 
         <div id="mainContainerProfile">
-            <div id="profileContainer">
-                <div id="headerProfile">
-                    <span id="headerTextProfile">My Portal</span>
+            <div id="headerProfile">
+                <span id="headerTextProfile">My Portal</span>
 
-                    <!-- Check number of Notifications here -->
-                    <a href="/notifications/" id="notificationIcon">
-                        <span id="notificationsNum">1</span>
-                    </a>
+                <!-- Check number of Notifications here -->
+                <a href="/notifications/" id="notificationIcon">
+                    <span id="notificationsNum">1</span>
+                </a>
 
-                    <hr style="border:0; height:1px; width:100%; background-color:#aaaaaa; margin:0;">
-                </div>
+                <hr style="border:0; height:1px; width:100%; background-color:#aaaaaa; margin:0;">
+            </div>
 
+            <div id="iconRowContainer">
                 <div id="iconRowTop">
                     <div class="iconContainerLeft">
                         <a href="#"><img src="/static/media/site_images/locate_icon_5.png"></a>
@@ -306,7 +302,7 @@
                         <span>Device Management</span>
                     </div>
                 </div>
-            </div>
+            </div>    
 
             {% include "footer.html" %}
         </div>
