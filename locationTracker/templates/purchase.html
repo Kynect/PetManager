@@ -238,10 +238,59 @@
 
             #orderContainer #quantityHeader {
                 display:block;
+                width:50%;
                 margin-bottom:15px;
                 float:left;
                 text-align:left;
                 font-size:18px;
+            }
+
+            #orderContainer #quantitySelect {
+                display:block;
+                width:45%;
+                margin-right:5%;
+                margin-bottom:15px;
+                float:right;
+                text-align:right;
+            }
+
+            .qty {
+                width: 30px;
+                height: 26px;
+                text-align: center;
+            }
+
+            input.qtyplus { 
+                width:26px; 
+                height:26px;
+            }
+
+            input.qtyminus { 
+                width:26px; 
+                height:26px;
+            }
+
+            #orderContainer #price {
+                display:block;
+                width:95%;
+                margin-right:5%;
+                margin-bottom:20px;
+                text-align:right;
+                font-size:20px;
+            }
+
+            #orderContainer #checkoutContainer {
+                display:block;
+                width:95%;
+                margin-right:5%;
+                text-align:center;
+            }
+
+            #checkoutContainer button {
+                background-color:#4dd2ff;
+                padding-left:5%;
+                padding-right:5%;
+                font-size:20px;
             }
 
             #imagesContainer {
@@ -381,6 +430,19 @@
                     <hr>
 
                     <span id="quantityHeader">Quantity</span>
+                    <span id="quantitySelect">
+                        <input type='button' value='-' class='qtyminus' field='quantity' />
+                        <input type='text' name='quantity' value='1' class='qty' />
+                        <input type='button' value='+' class='qtyplus' field='quantity' />
+                    </span>
+
+                    <hr>
+
+                    <span id="price">$139.99</span>
+
+                    <span id="checkoutContainer">
+                        <button type="button" class="btn btn-info">Checkout</button>
+                    </span>
                 </div>
 
                 <div id="imagesContainer">
@@ -452,6 +514,44 @@
                 document.getElementById('specs').style.display = 'none';
                 document.getElementById(div).style.display = 'block';
             }
+
+            // Function for Quantity Select
+            jQuery(document).ready(function(){
+                // This button will increment the value
+                $('.qtyplus').click(function(e){
+                    // Stop acting like a button
+                    e.preventDefault();
+                    // Get the field name
+                    fieldName = $(this).attr('field');
+                    // Get its current value
+                    var currentVal = parseInt($('input[name='+fieldName+']').val());
+                    // If is not undefined
+                    if (!isNaN(currentVal)) {
+                        // Increment
+                        $('input[name='+fieldName+']').val(currentVal + 1);
+                    } else {
+                        // Otherwise put a 0 there
+                        $('input[name='+fieldName+']').val(0);
+                    }
+                });
+                // This button will decrement the value till 0
+                $(".qtyminus").click(function(e) {
+                    // Stop acting like a button
+                    e.preventDefault();
+                    // Get the field name
+                    fieldName = $(this).attr('field');
+                    // Get its current value
+                    var currentVal = parseInt($('input[name='+fieldName+']').val());
+                    // If it isn't undefined or its greater than 0
+                    if (!isNaN(currentVal) && currentVal > 0) {
+                        // Decrement one
+                        $('input[name='+fieldName+']').val(currentVal - 1);
+                    } else {
+                        // Otherwise put a 0 there
+                        $('input[name='+fieldName+']').val(0);
+                    }
+                });
+            });
 
             function selectBlack(div) {
                 document.getElementById(div).style.borderColor = 'lightblue';
