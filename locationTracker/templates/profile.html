@@ -107,8 +107,7 @@
 
             /* FOOTER END */
 
-            #mainContainerProfile {
-                background-color:#ffffff;
+            .mainContainer {
                 position:absolute;
                 top:50px;
                 bottom:0;
@@ -187,21 +186,21 @@
                 align-items:center;
             }
 
-            #mainContainerProfile div .iconContainerLeft {
+            .mainContainer div .iconContainerLeft {
                 display:block;
                 width:33%;
                 float:left;
                 text-align:center;
             }
 
-            #mainContainerProfile div .iconContainerRight {
+            .mainContainer div .iconContainerRight {
                 display:block;
                 width:33%;
                 float:right;
                 text-align:center;
             }
 
-            #mainContainerProfile div .iconContainerMiddle {
+            .mainContainer div .iconContainerMiddle {
                 display:block;
                 width:34%;
                 margin-left:auto;
@@ -250,7 +249,7 @@
     <body>
         {% include "navbar.html" %}
 
-        <div id="mainContainerProfile">
+        <div class="mainContainer">
             <div id="headerProfile">
                 <span id="headerTextProfile">My Portal</span>
 
